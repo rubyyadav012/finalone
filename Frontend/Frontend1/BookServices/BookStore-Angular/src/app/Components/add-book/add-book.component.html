@@ -8,7 +8,7 @@
             <div class="card-body">
                 <h1 class="card-title text-center">Add new Book</h1>
                 <div class="card-text">
-                   <form class="form-class">
+                    <form [formGroup]="bookform" (ngSubmit)="onSubmit(bookform.value)">
                       <div class="form-group">
                             <label for="">Title</label>
                            <input type="text" class="form-control form-control-sm">

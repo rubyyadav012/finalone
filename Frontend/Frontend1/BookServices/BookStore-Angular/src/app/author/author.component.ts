@@ -12,57 +12,101 @@ import { BookservicesService } from '../bookservices.service';
 export class AuthorComponent implements OnInit {
 
   Author={
+
     username:"",
+
     password:"",
+
     email:"",
-    roles:[]
+
+
+
   }
-  role:any
+
+  role:any = null;
+
+ 
 
   constructor(private bookServices: BookservicesService,private fb:FormBuilder) { }
 
+ 
+
   ngOnInit(): void {
 
+ 
+
   }
-//  public frmRegister = this.fb.group({
 
-  //   email: this.fb.control('', [Validators.required]),
-  //   password: this.fb.control('', [Validators.required]),
-  //   username: this.fb.control('', [Validators.required]),
-  // })
+ public frmRegister = this.fb.group({
 
-  // get email() {
-  //   return this.frmRegister.get("email") as FormControl;
-  // }
+})
 
-  // get password() {
-  //   return this.frmRegister.get("password") as FormControl;
-  // }
-
-  // get username() {
-  //   return this.frmRegister.get("username") as FormControl;
-  // }
-
-
-  
   username:any =null;
-  
   password:any =null;
   email:any= null;
-  roles:any[] = []
+  
+
+ 
 
   RegisterClick() {
-    //
-    this.roles.push(this.role)
+
+   if(this.username == null){
+
+      alert("Please enter the User name")
+
+      return
+
+   }
+
+   if(this.password == null){
+
+    alert("Please enter the Password")
+
+    return
+
+   }
+
+   if(this.email == null){
+
+    alert("Please enter the Email")
+
+    return
+
+   }
+
+   if(this.email == null){
+
+    alert("Please enter the Email")
+
+    return
+
+   }
+
+   if(this.role == null){
+
+    alert("Please select the role")
+
+    return
+
+   }
+
+ 
+
+   
+
    let req={
+
+ 
 
       'username': this.username,
       'password': this.password,
-      email: this.email,
-    role:this.role
+       email: this.email,
+       role:this.role
+
     }
+
     console.log(req);
-    
+
     const promise = this.bookServices.signUp(req);
 
     promise.subscribe((res: any) => {
@@ -71,12 +115,7 @@ export class AuthorComponent implements OnInit {
 
     }, (error: any) => {
 
+});
 
-    });
-
-  
   }
-  
-  }
-
-
+}

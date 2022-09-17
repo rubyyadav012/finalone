@@ -1,0 +1,63 @@
+<section class="loginnow">
+
+  <div class="login col-lg-4 m-auto shadow-lg">
+
+    <h4>Signup</h4>
+
+    <form>
+
+      <div class="form-group">
+
+        <label for="username">UserName</label>
+
+        <input type="text" class="form-control" [(ngModel)]="username" name="username">
+
+      </div>
+
+      <dd class="text-danger" *ngIf="username.touched && username.invalid">
+
+        <span *ngIf="username.errors?.['required']"> username is Required</span>
+
+      </dd>
+
+
+    <dd class="text-danger" *ngIf="password.touched && password.invalid">
+
+      <span *ngIf="password.errors?.['required']"> password Required</span>
+
+    </dd>
+
+    <div class="form-group">
+
+      <label for="Password1">Password</label>
+
+      <input type="password" class="form-control" [(ngModel)]="password" name="Password">
+
+      <div class="form-group">
+
+        <label for="email">Email</label>
+
+        <input type="email" class="form-control" [(ngModel)]="email" name="email" aria-describedby="emailHelp">
+
+      </div>
+
+      <label for="name">User Role</label>
+          <select class="form-control" [(ngModel)]="role" name="payment" id="payment-Type">
+            <option value="author">author</option>
+            <option value="reader">reader</option>
+        </select>
+
+      <dd class="text-danger" *ngIf="email.touched && email.invalid">
+
+        <span *ngIf="email.errors?.['required']"> Email Id Required</span>
+      </div>
+
+      <button (click)="RegisterClick()"[disabled]="frmRegister.invalid" class="btn btn-danger col-lg-12">Signup</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+ 

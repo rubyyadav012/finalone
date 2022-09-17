@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="color: white">Book List</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            style="color: white"
+            routerLink="/book-list"
+            >Show Books</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" routerLink="/add-book"
+            >Add Book</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" routerLink="/Author">Author</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" href="#">Reader</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white" routerLink="/Login"
+            >login</a
+          >
+        </li>
+
+      </ul>
+      <span class="navbar-text text-bold" style="color: white">
+      Digital Book
+      </span>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

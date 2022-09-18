@@ -16,6 +16,12 @@
             <option value="cash">cash</option>
             <option value="card">card</option>
         </select>
+
+        <label *ngIf="Bill.paymentMethod == 'card'" for="name">Card Number</label>
+          <input *ngIf="Bill.paymentMethod == 'card'"
+            type="text"
+            class="form-control"
+            name="cardNo" [(ngModel)]="Bill.cardNo" />
         </div>
   &nbsp;
 

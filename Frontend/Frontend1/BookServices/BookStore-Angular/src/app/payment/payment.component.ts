@@ -10,14 +10,17 @@ import { BookservicesService } from '../bookservices.service';
 export class PaymentComponent implements OnInit {
   bookId:any=null;
   price:any= null;
+  cardNo:any = null;
+  userId:any = null;
   Bill={
     "book":{"id":this.bookId},
-    "name":"",
+     name:null,
     "email":" ",
    "paymentMethod":"",
    "totalAmount": this.price,
    "paymentStatus":"SUCCESS",
    "refund":"false",
+    cardNo:""
    }
 
 
@@ -28,7 +31,7 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
 
     this.bookId = this.route.snapshot.paramMap.get("id");
-
+    this.userId =window.sessionStorage.getItem('id');
     this.price = this.route.snapshot.paramMap.get("price");
     console.log("price="+this.price)
   }
@@ -36,6 +39,7 @@ export class PaymentComponent implements OnInit {
 
     this.Bill.book.id= this.bookId
     this.Bill.totalAmount = this.price;
+    this.Bill.name  = this.userId
     const promise = this.bookservices.payment(this.Bill);
     promise.subscribe((res: any) => {
       console.log(res);

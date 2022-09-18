@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BookservicesService } from '../bookservices.service';
 
 
@@ -27,13 +28,9 @@ export class AuthorComponent implements OnInit {
 
  
 
-  constructor(private bookServices: BookservicesService,private fb:FormBuilder) { }
-
- 
+  constructor(private bookServices: BookservicesService,private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
-
- 
 
   }
 
@@ -45,9 +42,6 @@ export class AuthorComponent implements OnInit {
   password:any =null;
   email:any= null;
   
-
- 
-
   RegisterClick() {
 
    if(this.username == null){
@@ -103,6 +97,7 @@ export class AuthorComponent implements OnInit {
        email: this.email,
        role:this.role
 
+
     }
 
     console.log(req);
@@ -110,7 +105,7 @@ export class AuthorComponent implements OnInit {
     const promise = this.bookServices.signUp(req);
 
     promise.subscribe((res: any) => {
-
+      this.router.navigate(['/Login']);
       console.log(res);
 
     }, (error: any) => {

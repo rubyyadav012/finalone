@@ -35,14 +35,14 @@
           <td>{{ book.author }}</td>
           <td class="text-center">
             <button
-              class="btn btn-sm btn-primary"
+              class="btn btn-sm btn-primary" *ngIf="role == 'ROLE_AUTHOR'"
               routerLink="/edit-book/{{ book.id }}"
             >
               Edit
             </button>
 
             &nbsp;&nbsp;<button
-            class="btn btn-sm btn-primary" *ngIf="role == 'ROLE_AUTHOR'"
+            class="btn btn-sm btn-primary" *ngIf="role == 'ROLE_USER'"
             routerLink="/payment/{{ book.id }}/{{book.price}}"
           >
 

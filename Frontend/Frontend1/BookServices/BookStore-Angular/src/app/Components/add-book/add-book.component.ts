@@ -18,9 +18,15 @@ export class AddBookComponent implements OnInit {
     private ngZone: NgZone,
     private crudApi:CrudService ) { 
       this.bookform = this.formBuilder.group({
-        name:[''],
+        title:[''],
         price: [''],
-        description: ['']
+        catagory: [''],
+        image:[''],
+        publisher:[''],
+        publisherDate:[''],
+        contents:[''],
+        author:[''],
+        status:1
       })
     }
 
@@ -29,7 +35,7 @@ export class AddBookComponent implements OnInit {
     
   }
   onSubmit(book:any):any{
-    
+    console.log(book)
     const promise = this.bookservices.addBook(book);
 
 

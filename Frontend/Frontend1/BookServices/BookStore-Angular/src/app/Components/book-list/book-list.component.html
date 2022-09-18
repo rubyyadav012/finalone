@@ -1,4 +1,4 @@
-
+<app-header></app-header>
 <div class="container">
   <div
     class="rwo d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
@@ -42,7 +42,7 @@
             </button>
 
             &nbsp;&nbsp;<button
-            class="btn btn-sm btn-primary"
+            class="btn btn-sm btn-primary" *ngIf="role == 'ROLE_AUTHOR'"
             routerLink="/payment/{{ book.id }}/{{book.price}}"
           >
 

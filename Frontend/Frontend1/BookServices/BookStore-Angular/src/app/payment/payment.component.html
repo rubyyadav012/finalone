@@ -1,3 +1,5 @@
+
+<app-header></app-header>
 <div class="row justify-content-center mt-3">
     <div class="col-md-5">
       <form>
@@ -6,9 +8,8 @@
           <input
             type="text"
             class="form-control"
-            name="price" [(ngModel)]="price" readonly   
-          />
-  
+            name="price" [(ngModel)]="price" [disabled]="true"/>
+
           <label for="name">Payment-Type</label>
           <select class="form-control" name="payment-Type" [(ngModel)]="Bill.paymentMethod" id="payment-Type">
             <option value=null>Payment Type</option>
@@ -16,12 +17,11 @@
             <option value="card">card</option>
         </select>
         </div>
+  &nbsp;
 
-           
         <div class="form-group">
-          <button class="btn btn-primary btn-block" (click)="payment()">Payment</button>
+          <button  class="btn btn-primary btn-block" (click)="payment()">Payment</button>
         </div>
       </form>
     </div>
   </div>
-  

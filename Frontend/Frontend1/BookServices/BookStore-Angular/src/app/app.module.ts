@@ -12,6 +12,8 @@ import { AuthorComponent } from './author/author.component';
 import { ReaderComponent } from './reader/reader.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PaymentComponent } from './payment/payment.component';
     AuthorComponent,
     ReaderComponent,
     LoginComponent,
-    PaymentComponent
+    PaymentComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

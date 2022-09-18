@@ -4,13 +4,14 @@ import { AuthorComponent } from './author/author.component';
 import { AddBookComponent } from './Components/add-book/add-book.component';
 import { BookDetailsComponent } from './Components/book-details/book-details.component';
 import { BookListComponent } from './Components/book-list/book-list.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
 {
-  path: '' , redirectTo:'add-book', pathMatch: 'full'
+  path: '' , redirectTo:'Login', pathMatch: 'full'
 },
 {
   path: 'book-list' , component:BookListComponent
@@ -27,6 +28,9 @@ const routes: Routes = [
 },
 {
   path: 'Login' , component:LoginComponent
+},
+{
+  path: 'home' , component:HomeComponent
 },
 
 {

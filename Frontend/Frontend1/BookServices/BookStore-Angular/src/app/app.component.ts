@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BookStore';
+  role:any =null
+  ngOnInit(): void {
+    this.role=window.sessionStorage.getItem('role');
+  }
 }

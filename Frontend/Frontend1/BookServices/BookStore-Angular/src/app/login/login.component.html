@@ -26,13 +26,16 @@
         <span *ngIf="password.errors?.['required']"> password Required</span>
 
       </dd>
-
+      &nbsp;
       <div class="form-group">
 
         <label for="Password1">Password</label>
 
         <input type="password" class="form-control" formControlName="password" name="Password">
 
+      </div>
+      &nbsp;
+      <div class="form-group">
         <button type="submit" [disabled]="frmRegister.invalid" class="btn btn-danger col-lg-12">login</button>
       </div>
     </form>

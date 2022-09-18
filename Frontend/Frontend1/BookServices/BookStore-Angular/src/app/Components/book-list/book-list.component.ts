@@ -9,15 +9,16 @@ import { BookservicesService } from 'src/app/bookservices.service';
 export class BookListComponent implements OnInit {
   Books:any = []
   constructor(private bookservices: BookservicesService) { }
-
+  role:any = null;
   ngOnInit(): void {
     this.bookservices.getBook().subscribe(res=>{
       console.log(res)
       this.Books = res;
     })
+    this.role=window.sessionStorage.getItem('role');
   }
-  
-    
+
+
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookservicesService } from '../bookservices.service';
 
 @Component({
@@ -20,11 +20,11 @@ export class PaymentComponent implements OnInit {
    "refund":"false",
    }
 
-  
 
-  constructor(private route:ActivatedRoute,private bookservices:BookservicesService) { }
 
- 
+  constructor(private route:ActivatedRoute,private bookservices:BookservicesService,private router: Router) { }
+
+
   ngOnInit(): void {
 
     this.bookId = this.route.snapshot.paramMap.get("id");
@@ -37,11 +37,10 @@ export class PaymentComponent implements OnInit {
     this.Bill.book.id= this.bookId
     this.Bill.totalAmount = this.price;
     const promise = this.bookservices.payment(this.Bill);
-
-
     promise.subscribe((res: any) => {
-
       console.log(res);
+      alert("Payment done successfully");
+      this.router.navigate(['/home']);
 
     }, (error: any) => {
 

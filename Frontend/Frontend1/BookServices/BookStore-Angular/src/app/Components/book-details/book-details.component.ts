@@ -16,19 +16,20 @@ export class BookDetailsComponent implements OnInit {
     private router: Router ,
     private ngZone: NgZone,
     private activatedRoute: ActivatedRoute,
-    private crudApi:CrudService ) { 
+    private crudApi:CrudService ) {
       this.getId = this.activatedRoute.snapshot.paramMap.get('id');
       this.crudApi.getBook(this.getId).subscribe(res=>{
+        console.log(res);
         this.updateForm.setValue({
-          name: res['name'],
+          title: res['title'],
           price: res['price'],
-          description: res ['description']
+          contents: res ['contents']
         })
       });
       this.updateForm = this.formBuilder.group({
-        name:[''],
+        title:[''],
         price: [''],
-        description: ['']
+        contents: ['']
       })
     }
 

@@ -13,8 +13,10 @@
                       <div class="form-group">
                             <label for="">Title</label>
                            <input type="text" class="form-control form-control-sm" formControlName="title" name="title">
-                          </div>
-
+                      </div>
+                      <dd class="text-danger" *ngIf="title.touched && title.invalid">
+                        <span *ngIf="title.errors?.['required']"> <title></title>title is Required</span>
+                      </dd>
                        <div class="form-group">
 
                             <label for="">Catagory</label>
@@ -23,11 +25,23 @@
                         </div>
                         <div class="form-group">
 
+                            <dd class="text-danger" *ngIf="catagory.touched && catagory.invalid">
+
+                                <span *ngIf="catagory.errors?.['required']"> <title></title>catagory is Required</span>
+                        
+                              </dd>
+
                           <label for="">Price</label>
 
                           <input type="number" class="form-control form-control-sm" formControlName="price" name="price">
 
                         </div>
+
+                        <dd class="text-danger" *ngIf="price.touched && price.invalid">
+
+                            <span *ngIf="price.errors?.['required']"> <title></title>price is Required</span>
+                    
+                          </dd>
 
                         <div class="form-group">
 
@@ -35,6 +49,13 @@
                             <input type="text" class="form-control form-control-sm"  formControlName="author" name="author">
 
                         </div>
+                      
+                        <dd class="text-danger" *ngIf="author.touched && author.invalid">
+
+                            <span *ngIf="author.errors?.['required']"> <title></title>author is Required</span>
+                    
+                          </dd>
+
                         <div class="form-group">
 
                             <label for="">Publisher</label>
@@ -43,6 +64,12 @@
 
                         </div>
 
+                        <dd class="text-danger" *ngIf="publisher.touched && publisher.invalid">
+
+                            <span *ngIf="publisher.errors?.['required']"> <title></title>publisher is Required</span>
+                    
+                          </dd>
+
                         <div class="form-group">
 
                             <label for="">Publish Date</label>
@@ -50,6 +77,13 @@
                             <input type="date" class="form-control form-control-sm" formControlName="publisherDate" name="publisherDate" >
 
                         </div>
+
+
+                        <dd class="text-danger" *ngIf="publisherDate.touched && publisherDate.invalid">
+
+                            <span *ngIf="publisherDate.errors?.['required']"> <title></title>publisherDate is Required</span>
+                    
+                          </dd>
 
                         <div class="form-group">
 
@@ -67,6 +101,12 @@
                             <textarea class="form-control form-control-sm" formControlName="contents" name="contents" cols="20" rows="5"></textarea>
 
                         </div>
+
+                        <dd class="text-danger" *ngIf="contents.touched && publisher.invalid">
+
+                            <span *ngIf="contents.errors?.['required']"> <title></title>contents is Required</span>
+                    
+                          </dd>
 
                       <button type="submit" class="btn btn-primary col-lg-12">Save</button>
 

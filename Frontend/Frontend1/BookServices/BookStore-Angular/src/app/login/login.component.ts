@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
 
       window.sessionStorage.setItem('id',res.id );
       window.sessionStorage.setItem('role', res.roles[0]);
-      //window.sessionStorage.getItem('role');
+      
     }
 
     }

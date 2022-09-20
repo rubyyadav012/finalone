@@ -63,7 +63,7 @@ export class AddBookComponent implements OnInit {
     promise.subscribe((res: any) => {
 
       console.log(res);
-
+      this.router.navigate(['/book-list']);
     }, (error: any) => {
 
       console.log(error);

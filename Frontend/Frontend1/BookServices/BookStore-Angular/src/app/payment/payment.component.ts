@@ -44,7 +44,7 @@ export class PaymentComponent implements OnInit {
     promise.subscribe((res: any) => {
       console.log(res);
       alert("Payment done successfully");
-      this.router.navigate(['/home']);
+      this.router.navigate(['/book-list']);
 
     }, (error: any) => {
 

@@ -16,57 +16,44 @@ export class AddBookComponent implements OnInit {
   constructor(private formBuilder: FormBuilder ,private bookservices:BookservicesService,
     private router: Router ,
     private ngZone: NgZone,
-    private crudApi:CrudService ) { 
-      
+    private crudApi:CrudService ) {
       this.bookform = this.formBuilder.group({
-
-        title:this.formBuilder.control('',[Validators.required]),
-        price: this.formBuilder.control('',[Validators.required]),
-        catagory: this.formBuilder.control('',[Validators.required]),
-        publisher:this.formBuilder.control('',[Validators.required]),
-        publisherDate:this.formBuilder.control('',[Validators.required]),
-        contents:this.formBuilder.control('',[Validators.required]),
-        author:this.formBuilder.control('',[Validators.required]),
+        title:this.formBuilder.control(' ', [Validators.required]),
+        price: this.formBuilder.control('', [Validators.required]),
+        catagory: this.formBuilder.control('', [Validators.required]),
+        image:[''],
+        publisher:this.formBuilder.control('', [Validators.required]),
+        publisherDate:this.formBuilder.control('', [Validators.required]),
+        contents:this.formBuilder.control('', [Validators.required]),
+        author:this.formBuilder.control('', [Validators.required]),
         status:1
       })
     }
-
-      get title() {
-        return this.bookform.get("title") as FormControl;
-      }
-  
-      get price() {
-        return this.bookform.get("price") as FormControl;  
+    get publisher() {
+      return this.bookform.get("catagory") as FormControl;
+    }
+    get publisherDate() {
+      return this.bookform.get("publisherDate") as FormControl;
+    }
+    get contents() {
+      return this.bookform.get("contents") as FormControl;
+    }
+    get author() {
+      return this.bookform.get("author") as FormControl;
     }
 
+    get title() {
+      return this.bookform.get("title") as FormControl;
+    }
+    get price() {
+      return this.bookform.get("price") as FormControl;
+    }
     get catagory() {
       return this.bookform.get("catagory") as FormControl;
-    
-  }
-
-  get publisher() {
-    return this.bookform.get("publisher") as FormControl;
-  
-}
-
-get publisherDate() {
-  return this.bookform.get("publisherDate") as FormControl;
-
-}
-
-get contents() {
-  return this.bookform.get("contents") as FormControl;
-
-}
-
-get author() {
-  return this.bookform.get("author") as FormControl;
-
-}
-
+    }
   ngOnInit(): void {
 
-    
+
   }
   onSubmit(book:any):any{
     console.log(book)

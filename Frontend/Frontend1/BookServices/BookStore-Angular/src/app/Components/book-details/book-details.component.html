@@ -3,15 +3,15 @@
   <div class="col-md-5">
     <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="title">Name</label>
         <input
           type="text"
           class="form-control"
-          formControlName="name"
+          formControlName="title"
           required
         />
 
-        <label for="name">Price</label>
+        <label for="price">Price</label>
         <input
           type="text"
           class="form-control"
@@ -19,11 +19,11 @@
           required
         />
 
-        <label for="name">Description</label>
+        <label for="contents">Description</label>
         <input
           type="text"
           class="form-control"
-          formControlName="description"
+          formControlName="contents"
           required
         />
       </div>

@@ -11,58 +11,61 @@
                 <div class="card-text">
                     <form [formGroup]="bookform" (ngSubmit)="onSubmit(bookform.value)">
                       <div class="form-group">
-                            <label for="">Title</label>
+                            <label for="title">Title</label>
                            <input type="text" class="form-control form-control-sm" formControlName="title" name="title">
-                      </div>
-                      <dd class="text-danger" *ngIf="title.touched && title.invalid">
-                        <span *ngIf="title.errors?.['required']"> <title></title>title is Required</span>
-                      </dd>
+                          </div>
+                          <dd class="text-danger" *ngIf="title.touched && title.invalid">
+
+                            <span *ngIf="title.errors?.['required']"> title is Required</span>
+
+                          </dd>
+
                        <div class="form-group">
 
-                            <label for="">Catagory</label>
+                            <label for="catagory">Catagory</label>
 
                             <input type="text" class="form-control form-control-sm" formControlName="catagory" name="catagory">
                         </div>
+                        <dd class="text-danger" *ngIf="catagory.touched && catagory.invalid">
+
+                          <span *ngIf="catagory.errors?.['required']"> catagory is Required</span>
+
+                        </dd>
                         <div class="form-group">
 
-                            <dd class="text-danger" *ngIf="catagory.touched && catagory.invalid">
-
-                                <span *ngIf="catagory.errors?.['required']"> <title></title>catagory is Required</span>
-                        
-                              </dd>
-
-                          <label for="">Price</label>
+                          <label for="price">Price</label>
 
                           <input type="number" class="form-control form-control-sm" formControlName="price" name="price">
 
                         </div>
-
                         <dd class="text-danger" *ngIf="price.touched && price.invalid">
 
-                            <span *ngIf="price.errors?.['required']"> <title></title>price is Required</span>
-                    
-                          </dd>
+                          <span *ngIf="price.errors?.['required']"> price is Required</span>
 
+                        </dd>
                         <div class="form-group">
 
-                            <label for="">Author</label>
+                            <label for="author">Author</label>
                             <input type="text" class="form-control form-control-sm"  formControlName="author" name="author">
 
                         </div>
-                      
                         <dd class="text-danger" *ngIf="author.touched && author.invalid">
 
-                            <span *ngIf="author.errors?.['required']"> <title></title>author is Required</span>
-                    
-                          </dd>
+                          <span *ngIf="author.errors?.['required']"> author is Required</span>
 
+                        </dd>
                         <div class="form-group">
 
-                            <label for="">Publisher</label>
+                            <label for="publisher">Publisher</label>
 
                             <input type="text" class="form-control form-control-sm" formControlName="publisher" name="publisher">
 
                         </div>
+                        <dd class="text-danger" *ngIf="publisher.touched && publisher.invalid">
+
+                          <span *ngIf="publisher.errors?.['required']"> publisher is Required</span>
+
+                        </dd>
 
                         <dd class="text-danger" *ngIf="publisher.touched && publisher.invalid">
 
@@ -72,11 +75,16 @@
 
                         <div class="form-group">
 
-                            <label for="">Publish Date</label>
+                            <label for="publisherDate">Publish Date</label>
 
                             <input type="date" class="form-control form-control-sm" formControlName="publisherDate" name="publisherDate" >
 
                         </div>
+                        <dd class="text-danger" *ngIf="publisherDate.touched && publisherDate.invalid">
+
+                          <span *ngIf="publisherDate.errors?.['required']"> publisherDate is Required</span>
+
+                        </dd>
 
 
                         <dd class="text-danger" *ngIf="publisherDate.touched && publisherDate.invalid">
@@ -87,29 +95,28 @@
 
                         <div class="form-group">
 
-                            <label for="">Image</label>
+                            <label for="image">Image</label>
 
                             <input type="file" class="form-control form-control-sm" formControlName="image" name="image">
 
                         </div>
 
-                      
+
                         <div class="form-group">
 
-                            <label for="">Contents</label>
+                            <label for="contents">Contents</label>
 
                             <textarea class="form-control form-control-sm" formControlName="contents" name="contents" cols="20" rows="5"></textarea>
 
                         </div>
+                        <dd class="text-danger" *ngIf="contents.touched && contents.invalid">
 
-                        <dd class="text-danger" *ngIf="contents.touched && publisher.invalid">
+                          <span *ngIf="contents.errors?.['required']"> contents is Required</span>
 
-                            <span *ngIf="contents.errors?.['required']"> <title></title>contents is Required</span>
-                    
-                          </dd>
+                        </dd>
 
-                      <button type="submit" class="btn btn-primary col-lg-12">Save</button>
 
+                      <button type="submit" [disabled]="bookform.invalid" class="btn btn-primary col-lg-12">Save</button>
                     </form>
 
                 </div>

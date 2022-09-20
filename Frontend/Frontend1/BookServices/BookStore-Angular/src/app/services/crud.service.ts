@@ -9,9 +9,9 @@ import { catchError , map } from 'rxjs/operators';
 })
 export class CrudService {
   //Node js Api
-  REST_API:string = "http://localhost:8000/api"
+  REST_API:string = "http://localhost:9093/digitalbooks"
   //set http headers
-  httpHeaders = new HttpHeaders().set('Content-Type' , 'application/json') 
+  httpHeaders = new HttpHeaders().set('Content-Type' , 'application/json')
 
   constructor(private httpClient:HttpClient) {
 
@@ -30,7 +30,7 @@ export class CrudService {
 
    //get single book
    getBook(id:any) :Observable<any>{
-    let API_URL  = `${this.REST_API}/read-book/${id}`;
+    let API_URL  = `${this.REST_API}/book/${id}`;
     return this.httpClient.get(API_URL ,{headers: this.httpHeaders}).pipe(map((res:any)=>{
       return res || {}
     }),
@@ -39,7 +39,7 @@ export class CrudService {
    }
    //update bookData
    updateBook(id:any , data:any):Observable<any>{
-    let API_URL  = `${this.REST_API}/update-book/${id}`;
+    let API_URL  = `${this.REST_API}/book/update/${id}`;
     return this.httpClient.put(API_URL , data ,{headers: this.httpHeaders}).pipe(
       catchError(this.handleError)
     )
